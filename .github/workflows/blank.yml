@@ -37,4 +37,7 @@ jobs:
       - name: Deploy CDK stack
         run: cdk list
       - name: Deploy CDK stack
+        env:
+          CDK_DEFAULT_ACCOUNT: ${{ secrets.AWS_ACCOUNT_ID }}
+          CDK_DEFAULT_REGION: eu-west-1
         run: cdk deploy
